@@ -1,0 +1,9 @@
+pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories { google(); mavenCentral() }
+}
+// Builds the library on its own. Apps include android/ as their :fasteink module instead.
+rootProject.name = 'fasteink-build'
+include ':fasteink'
+project(':fasteink').projectDir = file('android')
